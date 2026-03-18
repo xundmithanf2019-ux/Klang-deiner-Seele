@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum – Klang deiner Seele | Barbara Hofer</title>
+  <meta name="description" content="Impressum – Barbara Hofer, Klang deiner Seele. Angaben gemäß § 5 ECG." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal-page {
+      position: relative; z-index: 1;
+      padding: clamp(120px, 15vw, 180px) 0 clamp(80px, 12vw, 140px);
+      min-height: 80vh;
+    }
+    .legal-page .section-label { margin-bottom: 12px; }
+    .legal-page .section-title { margin-bottom: 48px; }
+    .legal-content {
+      max-width: 720px;
+    }
+    .legal-block {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .legal-block h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .legal-block p, .legal-block address {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      font-style: normal;
+      margin-bottom: 10px;
+    }
+    .legal-block a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .legal-block a:hover { opacity: 0.75; }
+    .legal-back {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 56px;
+      transition: color 0.3s;
+    }
+    .legal-back:hover { color: var(--gold); }
+    .legal-back svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html#hero" class="nav-logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            <path d="M8 20 Q12 14 16 20 Q20 26 24 20 Q28 14 32 20" stroke="url(#goldGrad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="goldGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#c9a96e"/>
+                <stop offset="100%" stop-color="#f0d794"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">Klang deiner Seele</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about" class="nav-link">Über mich</a></li>
+        <li><a href="index.html#services" class="nav-link">Angebote</a></li>
+        <li><a href="index.html#approach" class="nav-link">Mein Ansatz</a></li>
+        <li><a href="index.html#testimonials" class="nav-link">Stimmen</a></li>
+        <li><a href="index.html#contact" class="nav-link nav-cta">Termin anfragen</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ IMPRESSUM ═══════════════════ -->
+  <section class="legal-page">
+    <div class="container">
+      <div class="legal-content">
+        <a href="index.html" class="legal-back">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Zurück zur Startseite
+        </a>
+
+        <div class="section-label">Rechtliches</div>
+        <h1 class="section-title">Impressum</h1>
+
+        <div class="legal-block">
+          <h2>Angaben gemäß § 5 ECG</h2>
+          <address>
+            <strong style="color: var(--text-primary);">Barbara Hofer</strong><br>
+            Klang deiner Seele<br>
+            Katzenbach 6<br>
+            A-4122 Arnreit<br>
+            Österreich
+          </address>
+        </div>
+
+        <div class="legal-block">
+          <h2>Kontakt</h2>
+          <p>
+            Telefon: <a href="tel:+4366473473342">+43 664 734 733 42</a><br>
+            E-Mail: <a href="mailto:barbara@klangdeinerseele.at">barbara@klangdeinerseele.at</a>
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>Unternehmensgegenstand</h2>
+          <p>
+            Humanenergetik, spirituelle Heilarbeit, Lebensberatung und Impuls-Coaching.
+            Klangschalen-Massage, Chakren-Harmonisierung, Access Bars® & Facelift, schamanische Sitzungen.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>Berufsbezeichnung & Berufsrecht</h2>
+          <p>
+            Berufsbezeichnung: Humanenergetikerin, spirituelle Heilerin, Lebensberaterin, Impuls-Coach der Neuen Zeit.<br>
+            Die angebotenen Leistungen stellen keine medizinische Behandlung dar und ersetzen nicht den Besuch bei einem Arzt oder einer Ärztin.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>Aufsichtsbehörde</h2>
+          <p>
+            Bezirkshauptmannschaft Rohrbach<br>
+            4150 Rohrbach-Berg, Österreich
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>Online-Streitbeilegung</h2>
+          <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit.
+            Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer
+            Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>Haftungsausschluss</h2>
+          <p>
+            Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit,
+            Vollständigkeit und Aktualität der Inhalte übernehmen wir keine Gewähr. Als Dienstanbieter sind
+            wir für eigene Inhalte auf dieser Website nach den allgemeinen Gesetzen verantwortlich.
+          </p>
+          <p>
+            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem
+            österreichischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der
+            Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
+            jeweiligen Autors bzw. Erstellers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer id="footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30 Q180 0 360 30 Q540 60 720 30 Q900 0 1080 30 Q1260 60 1440 30" stroke="url(#footerWave)" stroke-width="1.5" fill="none" opacity="0.4"/>
+        <defs>
+          <linearGradient id="footerWave" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#c9a96e" stop-opacity="0"/>
+            <stop offset="30%" stop-color="#c9a96e"/>
+            <stop offset="70%" stop-color="#a07bc9"/>
+            <stop offset="100%" stop-color="#a07bc9" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a href="index.html#hero" class="nav-logo">
+          <span class="logo-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="url(#goldGrad2)" stroke-width="1.5"/>
+              <path d="M8 20 Q12 14 16 20 Q20 26 24 20 Q28 14 32 20" stroke="url(#goldGrad2)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="goldGrad2" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#c9a96e"/>
+                  <stop offset="100%" stop-color="#f0d794"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="logo-text">Klang deiner Seele</span>
+        </a>
+        <p>Heilung durch Klang, Energie & Intuition.<br>Barbara Hofer – Arnreit, Oberösterreich.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#about">Über mich</a></li>
+          <li><a href="index.html#services">Angebote</a></li>
+          <li><a href="index.html#approach">Mein Ansatz</a></li>
+          <li><a href="index.html#testimonials">Stimmen</a></li>
+          <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Kontakt</h4>
+        <p>Katzenbach 6<br>A-4122 Arnreit (OÖ)</p>
+        <a href="tel:+4366473473342">+43 664 734 733 42</a>
+        <a href="mailto:barbara@klangdeinerseele.at">barbara@klangdeinerseele.at</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 Klang deiner Seele – Barbara Hofer. Alle Rechte vorbehalten.</span>
+        <span>
+          <a href="impressum.html" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='inherit'">Impressum</a>
+          &nbsp;·&nbsp;
+          <a href="datenschutz.html" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='inherit'">Datenschutz</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

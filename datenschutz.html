@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutz – Klang deiner Seele | Barbara Hofer</title>
+  <meta name="description" content="Datenschutzerklärung – Barbara Hofer, Klang deiner Seele. Informationen gemäß DSGVO." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .legal-page {
+      position: relative; z-index: 1;
+      padding: clamp(120px, 15vw, 180px) 0 clamp(80px, 12vw, 140px);
+      min-height: 80vh;
+    }
+    .legal-page .section-label { margin-bottom: 12px; }
+    .legal-page .section-title { margin-bottom: 48px; }
+    .legal-content {
+      max-width: 720px;
+    }
+    .legal-block {
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .legal-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .legal-block h2 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--gold);
+      margin-bottom: 16px;
+      letter-spacing: 0.02em;
+    }
+    .legal-block h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      margin-top: 24px;
+    }
+    .legal-block p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 12px;
+    }
+    .legal-block ul {
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+    .legal-block ul li {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 6px;
+    }
+    .legal-block a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    .legal-block a:hover { opacity: 0.75; }
+    .legal-back {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 56px;
+      transition: color 0.3s;
+    }
+    .legal-back:hover { color: var(--gold); }
+    .legal-back svg { width: 16px; height: 16px; }
+  </style>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="index.html#hero" class="nav-logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            <path d="M8 20 Q12 14 16 20 Q20 26 24 20 Q28 14 32 20" stroke="url(#goldGrad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="goldGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#c9a96e"/>
+                <stop offset="100%" stop-color="#f0d794"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">Klang deiner Seele</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html#about" class="nav-link">Über mich</a></li>
+        <li><a href="index.html#services" class="nav-link">Angebote</a></li>
+        <li><a href="index.html#approach" class="nav-link">Mein Ansatz</a></li>
+        <li><a href="index.html#testimonials" class="nav-link">Stimmen</a></li>
+        <li><a href="index.html#contact" class="nav-link nav-cta">Termin anfragen</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ DATENSCHUTZ ═══════════════════ -->
+  <section class="legal-page">
+    <div class="container">
+      <div class="legal-content">
+        <a href="index.html" class="legal-back">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Zurück zur Startseite
+        </a>
+
+        <div class="section-label">Rechtliches</div>
+        <h1 class="section-title">Datenschutzerklärung</h1>
+
+        <div class="legal-block">
+          <h2>1. Verantwortliche Person</h2>
+          <p>
+            Verantwortlich für die Verarbeitung personenbezogener Daten auf dieser Website ist:
+          </p>
+          <p>
+            <strong style="color: var(--text-primary);">Barbara Hofer</strong><br>
+            Klang deiner Seele<br>
+            Katzenbach 6, A-4122 Arnreit (OÖ)<br>
+            Telefon: <a href="tel:+4366473473342">+43 664 734 733 42</a><br>
+            E-Mail: <a href="mailto:barbara@klangdeinerseele.at">barbara@klangdeinerseele.at</a>
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>2. Erhebung und Verarbeitung personenbezogener Daten</h2>
+          <h3>Kontaktformular</h3>
+          <p>
+            Wenn Sie das Kontaktformular auf unserer Website nutzen, werden die von Ihnen eingegebenen Daten
+            (Vorname, Nachname, E-Mail-Adresse, sowie Ihre Nachricht) zur Bearbeitung Ihrer Anfrage und für
+            den Fall von Anschlussfragen gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+          </p>
+          <p>
+            Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f DSGVO
+            (berechtigtes Interesse an der Bearbeitung von Anfragen).
+          </p>
+
+          <h3>Kontaktaufnahme per E-Mail oder Telefon</h3>
+          <p>
+            Wenn Sie uns per E-Mail oder Telefon kontaktieren, werden Ihre Angaben zur Bearbeitung der Anfrage
+            und für den Fall von Anschlussfragen gespeichert. Die Daten werden nicht ohne Ihre Einwilligung
+            an Dritte weitergegeben.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>3. Speicherdauer</h2>
+          <p>
+            Personenbezogene Daten, die über das Kontaktformular oder per E-Mail übermittelt werden, werden
+            gespeichert, solange dies zur Bearbeitung Ihrer Anfrage notwendig ist. Soweit gesetzliche
+            Aufbewahrungspflichten bestehen, richtet sich die Speicherdauer nach diesen.
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>4. Weitergabe von Daten</h2>
+          <p>
+            Eine Übermittlung Ihrer persönlichen Daten an Dritte findet grundsätzlich nicht statt, außer:
+          </p>
+          <ul>
+            <li>Sie haben Ihre ausdrückliche Einwilligung dazu erteilt (Art. 6 Abs. 1 lit. a DSGVO),</li>
+            <li>die Weitergabe ist zur Erfüllung eines Vertrages erforderlich (Art. 6 Abs. 1 lit. b DSGVO),</li>
+            <li>es besteht eine gesetzliche Verpflichtung zur Weitergabe (Art. 6 Abs. 1 lit. c DSGVO).</li>
+          </ul>
+        </div>
+
+        <div class="legal-block">
+          <h2>5. Ihre Rechte</h2>
+          <p>Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer gespeicherten personenbezogenen Daten:</p>
+          <ul>
+            <li><strong style="color: var(--text-primary);">Auskunft</strong> – Sie können Auskunft über Ihre gespeicherten Daten verlangen (Art. 15 DSGVO).</li>
+            <li><strong style="color: var(--text-primary);">Berichtigung</strong> – Sie können die Berichtigung unrichtiger Daten verlangen (Art. 16 DSGVO).</li>
+            <li><strong style="color: var(--text-primary);">Löschung</strong> – Sie können die Löschung Ihrer Daten verlangen (Art. 17 DSGVO).</li>
+            <li><strong style="color: var(--text-primary);">Einschränkung</strong> – Sie können die Einschränkung der Verarbeitung verlangen (Art. 18 DSGVO).</li>
+            <li><strong style="color: var(--text-primary);">Widerspruch</strong> – Sie können der Verarbeitung widersprechen (Art. 21 DSGVO).</li>
+            <li><strong style="color: var(--text-primary);">Datenübertragbarkeit</strong> – Sie können Ihre Daten in einem strukturierten Format erhalten (Art. 20 DSGVO).</li>
+          </ul>
+          <p>
+            Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:
+            <a href="mailto:barbara@klangdeinerseele.at">barbara@klangdeinerseele.at</a>
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>6. Beschwerderecht</h2>
+          <p>
+            Sie haben das Recht, sich bei der zuständigen Datenschutzbehörde zu beschweren. Die österreichische
+            Datenschutzbehörde ist erreichbar unter:
+          </p>
+          <p>
+            Österreichische Datenschutzbehörde<br>
+            Barichgasse 40–42, 1030 Wien<br>
+            Telefon: +43 1 52 152-0<br>
+            E-Mail: <a href="mailto:dsb@dsb.gv.at">dsb@dsb.gv.at</a>
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>7. Technische Hinweise</h2>
+          <h3>Server-Logfiles</h3>
+          <p>
+            Beim Besuch dieser Website werden durch den Webhosting-Anbieter automatisch technische Daten
+            (IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Uhrzeit des Zugriffs) in sogenannten
+            Server-Logfiles gespeichert. Diese Daten sind nicht bestimmten Personen zuordenbar und werden
+            nicht mit anderen Datenquellen zusammengeführt.
+          </p>
+          <h3>Google Fonts</h3>
+          <p>
+            Diese Website nutzt Google Fonts (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043,
+            USA). Beim Aufruf einer Seite lädt Ihr Browser die benötigten Schriftarten direkt von Google-Servern.
+            Dabei wird Ihre IP-Adresse an Google übertragen. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO
+            (berechtigtes Interesse an einer einheitlichen Darstellung der Website).
+          </p>
+        </div>
+
+        <div class="legal-block">
+          <h2>8. Aktualität dieser Erklärung</h2>
+          <p>
+            Diese Datenschutzerklärung ist aktuell gültig und hat den Stand März 2025.
+            Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher
+            Vorgaben kann es notwendig werden, diese Datenschutzerklärung zu ändern.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer id="footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30 Q180 0 360 30 Q540 60 720 30 Q900 0 1080 30 Q1260 60 1440 30" stroke="url(#footerWave)" stroke-width="1.5" fill="none" opacity="0.4"/>
+        <defs>
+          <linearGradient id="footerWave" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#c9a96e" stop-opacity="0"/>
+            <stop offset="30%" stop-color="#c9a96e"/>
+            <stop offset="70%" stop-color="#a07bc9"/>
+            <stop offset="100%" stop-color="#a07bc9" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a href="index.html#hero" class="nav-logo">
+          <span class="logo-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="url(#goldGrad2)" stroke-width="1.5"/>
+              <path d="M8 20 Q12 14 16 20 Q20 26 24 20 Q28 14 32 20" stroke="url(#goldGrad2)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="goldGrad2" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#c9a96e"/>
+                  <stop offset="100%" stop-color="#f0d794"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="logo-text">Klang deiner Seele</span>
+        </a>
+        <p>Heilung durch Klang, Energie & Intuition.<br>Barbara Hofer – Arnreit, Oberösterreich.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html#about">Über mich</a></li>
+          <li><a href="index.html#services">Angebote</a></li>
+          <li><a href="index.html#approach">Mein Ansatz</a></li>
+          <li><a href="index.html#testimonials">Stimmen</a></li>
+          <li><a href="index.html#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Kontakt</h4>
+        <p>Katzenbach 6<br>A-4122 Arnreit (OÖ)</p>
+        <a href="tel:+4366473473342">+43 664 734 733 42</a>
+        <a href="mailto:barbara@klangdeinerseele.at">barbara@klangdeinerseele.at</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 Klang deiner Seele – Barbara Hofer. Alle Rechte vorbehalten.</span>
+        <span>
+          <a href="impressum.html" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='inherit'">Impressum</a>
+          &nbsp;·&nbsp;
+          <a href="datenschutz.html" style="color: inherit; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#c9a96e'" onmouseout="this.style.color='inherit'">Datenschutz</a>
+        </span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
