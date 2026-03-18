@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Klang deiner Seele – Barbara Hofer | Heilung durch Klang & Energie</title>
+  <meta name="description" content="Barbara Hofer – Impuls-Coach der Neuen Zeit. Klangschalen-Massage, Energiearbeit, Chakren-Harmonisierung & schamanische Heilung in Arnreit (OÖ) – online & vor Ort." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-trail" id="cursorTrail"></div>
+
+  <!-- Particle Canvas -->
+  <canvas id="particleCanvas"></canvas>
+
+  <!-- ═══════════════════ NAVIGATION ═══════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="20" r="18" stroke="url(#goldGrad)" stroke-width="1.5"/>
+            <path d="M8 20 Q12 14 16 20 Q20 26 24 20 Q28 14 32 20" stroke="url(#goldGrad)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="goldGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#c9a96e"/>
+                <stop offset="100%" stop-color="#f0d794"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">Klang deiner Seele</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">Über mich</a></li>
+        <li><a href="#services" class="nav-link">Angebote</a></li>
+        <li><a href="#approach" class="nav-link">Mein Ansatz</a></li>
+        <li><a href="#testimonials" class="nav-link">Stimmen</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Termin anfragen</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════ HERO ═══════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-orbs">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+    </div>
+
+    <div class="hero-soundwave">
+      <svg id="waveSvg" viewBox="0 0 1200 180" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="wave1" fill="none" stroke="url(#waveGrad1)" stroke-width="2" opacity="0.6"/>
+        <path id="wave2" fill="none" stroke="url(#waveGrad2)" stroke-width="1.5" opacity="0.4"/>
+        <path id="wave3" fill="none" stroke="url(#waveGrad3)" stroke-width="1" opacity="0.3"/>
+        <defs>
+          <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#7b6d8d" stop-opacity="0"/>
+            <stop offset="30%" stop-color="#c9a96e"/>
+            <stop offset="70%" stop-color="#a07bc9"/>
+            <stop offset="100%" stop-color="#7b6d8d" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#c9a96e" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#f0d794"/>
+            <stop offset="100%" stop-color="#c9a96e" stop-opacity="0"/>
+          </linearGradient>
+          <linearGradient id="waveGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a07bc9" stop-opacity="0"/>
+            <stop offset="50%" stop-color="#c9a96e"/>
+            <stop offset="100%" stop-color="#a07bc9" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-label reveal-up">Heilung · Energie · Transformation</div>
+      <h1 class="hero-title">
+        <span class="reveal-up delay-1">Klang</span>
+        <span class="hero-title-em reveal-up delay-2"><em>deiner</em></span>
+        <span class="reveal-up delay-3">Seele</span>
+      </h1>
+      <p class="hero-subtitle reveal-up delay-4">
+        Entdecke die heilende Kraft des Klangs.<br>
+        Dein Weg zur inneren Balance – online & vor Ort.
+      </p>
+      <div class="hero-actions reveal-up delay-5">
+        <a href="#services" class="btn btn-primary">Meine Angebote</a>
+        <a href="#contact" class="btn btn-ghost">Termin anfragen</a>
+      </div>
+      <div class="hero-meta reveal-up delay-6">
+        <div class="hero-meta-item">
+          <span class="meta-num">10+</span>
+          <span class="meta-label">Jahre Erfahrung</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-meta-item">
+          <span class="meta-num">500+</span>
+          <span class="meta-label">Begleitete Seelen</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-meta-item">
+          <span class="meta-num">∞</span>
+          <span class="meta-label">Möglichkeiten</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ ABOUT ═══════════════════ -->
+  <section id="about">
+    <div class="about-grid container">
+      <div class="about-visual">
+        <div class="about-image-frame">
+          <div class="about-image-placeholder">
+            <div class="image-symbol">
+              <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="60" cy="60" r="55" stroke="url(#circleGrad)" stroke-width="1" opacity="0.5"/>
+                <circle cx="60" cy="60" r="40" stroke="url(#circleGrad)" stroke-width="1" opacity="0.4"/>
+                <circle cx="60" cy="60" r="25" stroke="url(#circleGrad)" stroke-width="1" opacity="0.3"/>
+                <path d="M20 60 Q35 45 50 60 Q65 75 80 60 Q95 45 100 60" stroke="url(#circleGrad)" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <circle cx="60" cy="60" r="6" fill="url(#circleGrad)"/>
+                <defs>
+                  <linearGradient id="circleGrad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#c9a96e"/>
+                    <stop offset="100%" stop-color="#a07bc9"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+          <div class="about-badge">
+            <span>Impuls-Coach</span>
+            <span>der Neuen Zeit</span>
+          </div>
+        </div>
+        <div class="about-floating-card">
+          <div class="fc-icon">✦</div>
+          <div class="fc-text">
+            <strong>Barbara Hofer</strong>
+            <span>Arnreit, Oberösterreich</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content">
+        <div class="section-label reveal-left">Über mich</div>
+        <h2 class="section-title reveal-left delay-1">
+          Heilerin mit Herz &<br>
+          <em>Intuition als Kompass</em>
+        </h2>
+        <div class="about-text reveal-left delay-2">
+          <p>
+            Ich bin Barbara Hofer – Humanenergetikerin, spirituelle Heilerin, Lebensberaterin und
+            Impuls-Coach der Neuen Zeit. In meiner Arbeit verbinde ich uraltes Heilwissen mit
+            modernen Methoden, um dich auf deinem ganz persönlichen Weg zu begleiten.
+          </p>
+          <p>
+            Klang, Energie und Intuition sind meine Werkzeuge. Was entsteht, ist einzigartig –
+            denn jede Sitzung wird individuell für dich gestaltet. Mein Ziel: Deine
+            Selbstheilungskräfte zu aktivieren und dich in deiner ganzen Kraft zu verankern.
+          </p>
+        </div>
+        <div class="about-tags reveal-left delay-3">
+          <span class="tag">Humanenergetikerin</span>
+          <span class="tag">Spirituelle Heilerin</span>
+          <span class="tag">Lebensberaterin</span>
+          <span class="tag">Access Consciousness®</span>
+          <span class="tag">Schamanin</span>
+        </div>
+        <a href="#contact" class="btn btn-primary reveal-left delay-4">Meine Geschichte kennenlernen</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ SERVICES ═══════════════════ -->
+  <section id="services">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal-up">Angebote</div>
+        <h2 class="section-title reveal-up delay-1">
+          Dein Weg zur<br><em>inneren Heilung</em>
+        </h2>
+        <p class="section-desc reveal-up delay-2">
+          Jede Methode ist ein Schlüssel – ich finde intuitiv den richtigen für dich.
+        </p>
+      </div>
+
+      <div class="services-grid">
+
+        <div class="service-card featured reveal-up delay-1">
+          <div class="sc-glow"></div>
+          <div class="sc-icon">
+            <svg viewBox="0 0 60 60" fill="none"><circle cx="30" cy="30" r="20" stroke="url(#sg1)" stroke-width="1.5"/><path d="M10 30 Q18 20 26 30 Q34 40 42 30 Q50 20 50 30" stroke="url(#sg1)" stroke-width="2" fill="none" stroke-linecap="round"/><defs><linearGradient id="sg1" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c9a96e"/><stop offset="100%" stop-color="#f0d794"/></linearGradient></defs></svg>
+          </div>
+          <div class="sc-tag">Beliebt</div>
+          <h3>Klangschalen-<br>Massage</h3>
+          <p>Tibetische Klangschalen und Klangstäbe lösen tiefe Blockaden, schenken Entspannung und harmonisieren Körper, Geist und Seele auf zellulärer Ebene.</p>
+          <div class="sc-benefits">
+            <span>✦ Stressabbau</span>
+            <span>✦ Tiefenentspannung</span>
+            <span>✦ Schmerzlinderung</span>
+          </div>
+          <a href="#contact" class="sc-link">Termin anfragen <span>→</span></a>
+        </div>
+
+        <div class="service-card reveal-up delay-2">
+          <div class="sc-glow"></div>
+          <div class="sc-icon">
+            <svg viewBox="0 0 60 60" fill="none"><path d="M30 10 L30 50 M10 30 L50 30 M15 15 L45 45 M45 15 L15 45" stroke="url(#sg2)" stroke-width="1.5" stroke-linecap="round"/><circle cx="30" cy="30" r="8" fill="url(#sg2)" opacity="0.3"/><defs><linearGradient id="sg2" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a07bc9"/><stop offset="100%" stop-color="#c9a96e"/></linearGradient></defs></svg>
+          </div>
+          <h3>Chakren-<br>Harmonisierung</h3>
+          <p>Deine Energiezentren werden gescannt, gereinigt und in Einklang gebracht. Blockaden lösen sich auf – Lebensenergie fließt wieder frei.</p>
+          <div class="sc-benefits">
+            <span>✦ Energiefluss</span>
+            <span>✦ Innere Balance</span>
+            <span>✦ Klarheit</span>
+          </div>
+          <a href="#contact" class="sc-link">Termin anfragen <span>→</span></a>
+        </div>
+
+        <div class="service-card reveal-up delay-3">
+          <div class="sc-glow"></div>
+          <div class="sc-icon">
+            <svg viewBox="0 0 60 60" fill="none"><path d="M30 5 C15 5 5 15 5 30 C5 45 15 55 30 55 C45 55 55 45 55 30" stroke="url(#sg3)" stroke-width="1.5" stroke-linecap="round"/><path d="M30 15 L30 30 L40 22" stroke="url(#sg3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><defs><linearGradient id="sg3" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c9a96e"/><stop offset="100%" stop-color="#7b6d8d"/></linearGradient></defs></svg>
+          </div>
+          <h3>Impuls-Coach<br>der Neuen Zeit</h3>
+          <p>Als intuitiver Coach kombiniere ich Techniken individuell für dich. Entdecke deine innere Stärke, aktiviere Selbstheilungskräfte – online oder vor Ort.</p>
+          <div class="sc-benefits">
+            <span>✦ Online möglich</span>
+            <span>✦ Individuell</span>
+            <span>✦ Transformativ</span>
+          </div>
+          <a href="#contact" class="sc-link">Termin anfragen <span>→</span></a>
+        </div>
+
+        <div class="service-card reveal-up delay-2">
+          <div class="sc-glow"></div>
+          <div class="sc-icon">
+            <svg viewBox="0 0 60 60" fill="none"><rect x="15" y="10" width="30" height="40" rx="4" stroke="url(#sg4)" stroke-width="1.5"/><path d="M22 22 L38 22 M22 30 L38 30 M22 38 L32 38" stroke="url(#sg4)" stroke-width="1.5" stroke-linecap="round"/><defs><linearGradient id="sg4" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#f0d794"/><stop offset="100%" stop-color="#a07bc9"/></linearGradient></defs></svg>
+          </div>
+          <h3>Lebens-<br>beratung</h3>
+          <p>In einem vertraulichen Gespräch begleite ich dich durch Wendepunkte, Krisen und Neuorientierungen. Du findest deinen eigenen Weg – ich halte den Raum.</p>
+          <div class="sc-benefits">
+            <span>✦ Orientierung</span>
+            <span>✦ Vertrauen</span>
+            <span>✦ Neue Wege</span>
+          </div>
+          <a href="#contact" class="sc-link">Termin anfragen <span>→</span></a>
+        </div>
+
+        <div class="service-card reveal-up delay-3">
+          <div class="sc-glow"></div>
+          <div class="sc-icon">
+            <svg viewBox="0 0 60 60" fill="none"><path d="M30 10 Q40 20 50 30 Q40 40 30 50 Q20 40 10 30 Q20 20 30 10Z" stroke="url(#sg5)" stroke-width="1.5" fill="url(#sg5)" fill-opacity="0.1"/><circle cx="30" cy="30" r="5" fill="url(#sg5)"/><defs><linearGradient id="sg5" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a07bc9"/><stop offset="100%" stop-color="#f0d794"/></linearGradient></defs></svg>
+          </div>
+          <h3>Access Bars®<br>& Facelift</h3>
+          <p>32 Punkte am Kopf werden sanft berührt und entladen gespeicherte Gedanken, Gefühle und Glaubenssätze. Das Bewusstsein öffnet sich – tiefe Stille entsteht.</p>
+          <div class="sc-benefits">
+            <span>✦ Gedanken loslassen</span>
+            <span>✦ Bewusstsein</span>
+            <span>✦ Verjüngung</span>
+          </div>
+          <a href="#contact" class="sc-link">Termin anfragen <span>→</span></a>
+        </div>
+
+        <div class="service-card reveal-up delay-4">
+          <div class="sc-glow"></div>
+          <div class="sc-icon">
+            <svg viewBox="0 0 60 60" fill="none"><path d="M30 8 L32 20 L44 14 L36 24 L50 28 L38 32 L44 44 L32 38 L30 50 L28 38 L16 44 L22 32 L10 28 L24 24 L16 14 L28 20 Z" stroke="url(#sg6)" stroke-width="1.5" fill="url(#sg6)" fill-opacity="0.15"/><defs><linearGradient id="sg6" x1="0" y1="0" x2="60" y2="60" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c9a96e"/><stop offset="100%" stop-color="#a07bc9"/></linearGradient></defs></svg>
+          </div>
+          <h3>Schamanische<br>Sitzungen</h3>
+          <p>Uralte schamanische Techniken zur Seelenrückholung, Energiearbeit und Transformation. Eine tiefe Reise zu deinen inneren Schichten und deiner Urkraft.</p>
+          <div class="sc-benefits">
+            <span>✦ Seelenarbeit</span>
+            <span>✦ Transformation</span>
+            <span>✦ Urkraft</span>
+          </div>
+          <a href="#contact" class="sc-link">Termin anfragen <span>→</span></a>
+        </div>
+
+      </div>
+
+      <div class="services-online reveal-up">
+        <div class="online-badge">
+          <div class="online-dot"></div>
+          <span>Viele Angebote auch online verfügbar</span>
+        </div>
+        <p>Einfach und bequem von zu Hause – via Computer oder Mobiltelefon. Heilung kennt keine Entfernung.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ APPROACH ═══════════════════ -->
+  <section id="approach">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal-up">Mein Ansatz</div>
+        <h2 class="section-title reveal-up delay-1">
+          Wie deine Reise<br><em>beginnt</em>
+        </h2>
+      </div>
+      <div class="steps-grid">
+        <div class="step reveal-up delay-1">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Erstkontakt & Gespräch</h3>
+            <p>Wir lernen uns kennen. Du erzählst, was dich bewegt – ich höre zu, ohne zu urteilen. Gemeinsam finden wir heraus, was du gerade brauchst.</p>
+          </div>
+        </div>
+        <div class="step-line reveal-up delay-1"></div>
+        <div class="step reveal-up delay-2">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Individuelle Session</h3>
+            <p>Ich kombiniere intuitiv die passenden Methoden für dich. Keine Session gleicht der anderen – jede entsteht in dem Moment genau für dich.</p>
+          </div>
+        </div>
+        <div class="step-line reveal-up delay-2"></div>
+        <div class="step reveal-up delay-3">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>Integration & Nachklang</h3>
+            <p>Nach der Sitzung begleite ich dich im Integrationsprozess. Die Wirkung entfaltet sich in den Tagen und Wochen danach – du spürst die Veränderung.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+  <section id="testimonials">
+    <div class="testi-bg-glow"></div>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label reveal-up">Stimmen</div>
+        <h2 class="section-title reveal-up delay-1">
+          Was Menschen<br><em>erleben</em>
+        </h2>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card reveal-up delay-1">
+          <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+          <blockquote>
+            „Nach meiner ersten Klangschalen-Sitzung bei Barbara habe ich zum ersten Mal seit Jahren tief und ruhig geschlafen. Es war wie eine Reinigung meiner ganzen Seele."
+          </blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar">S</div>
+            <div>
+              <strong>Sandra M.</strong>
+              <span>Klangschalen-Massage</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card featured reveal-up delay-2">
+          <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+          <blockquote>
+            „Barbara hat eine außergewöhnliche Gabe, intuitiv zu spüren, was gebraucht wird. Die Online-Session war genauso kraftvoll wie vor Ort – eine transformierende Erfahrung."
+          </blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar">M</div>
+            <div>
+              <strong>Markus L.</strong>
+              <span>Impuls-Coaching online</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testi-card reveal-up delay-3">
+          <div class="testi-stars">✦ ✦ ✦ ✦ ✦</div>
+          <blockquote>
+            „Die Access Bars-Sitzung hat Gedankenmuster aufgelöst, die ich jahrelang mit mir getragen habe. Ich fühle mich leichter, freier und klarer als je zuvor."
+          </blockquote>
+          <div class="testi-author">
+            <div class="testi-avatar">E</div>
+            <div>
+              <strong>Eva R.</strong>
+              <span>Access Bars®</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CTA BAND ═══════════════════ -->
+  <section id="cta-band">
+    <div class="cta-inner container">
+      <div class="cta-text reveal-up">
+        <h2>Bereit für deine<br><em>Transformation?</em></h2>
+        <p>Online oder vor Ort in Arnreit, Oberösterreich.<br>Dein erster Schritt beginnt mit einer Nachricht.</p>
+      </div>
+      <div class="cta-actions reveal-up delay-2">
+        <a href="#contact" class="btn btn-primary btn-large">Termin anfragen</a>
+        <div class="cta-contact-info">
+          <a href="tel:+436647347 3342">+43 664 734 733 42</a>
+          <a href="mailto:barbara@klangdeinerseele.at">barbara@klangdeinerseele.at</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ CONTACT ═══════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="section-label reveal-left">Kontakt</div>
+          <h2 class="section-title reveal-left delay-1">
+            Lass uns<br><em>in Verbindung treten</em>
+          </h2>
+          <p class="reveal-left delay-2">
+            Ich freue mich auf deine Nachricht. Schreib mir, was dich beschäftigt –
+            gemeinsam finden wir den richtigen nächsten Schritt für dich.
+          </p>
+          <div class="contact-details reveal-left delay-3">
+            <div class="cd-item">
+              <div class="cd-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="url(#iconGrad1)"/><defs><linearGradient id="iconGrad1" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c9a96e"/><stop offset="100%" stop-color="#a07bc9"/></linearGradient></defs></svg>
+              </div>
+              <div>
+                <strong>Adresse</strong>
+                <span>Katzenbach 6, A-4122 Arnreit (OÖ)</span>
+              </div>
+            </div>
+            <div class="cd-item">
+              <div class="cd-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C9.61 21 3 14.39 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.21 2.2z" fill="url(#iconGrad2)"/><defs><linearGradient id="iconGrad2" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c9a96e"/><stop offset="100%" stop-color="#a07bc9"/></linearGradient></defs></svg>
+              </div>
+              <div>
+                <strong>Telefon</strong>
+                <a href="tel:+4366473473342">+43 664 734 733 42</a>
+              </div>
+            </div>
+            <div class="cd-item">
+              <div class="cd-icon">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="url(#iconGrad3)"/><defs><linearGradient id="iconGrad3" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#c9a96e"/><stop offset="100%" stop-color="#a07bc9"/></linearGradient></defs></svg>
+              </div>
+              <div>
+                <strong>E-Mail</strong>
+                <a href="mailto:barbara@klangdeinerseele.at">barbara@klangdeinerseele.at</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap reveal-right delay-1">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">Vorname</label>
+                <input type="text" id="fname" name="fname" placeholder="Dein Vorname" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Nachname</label>
+                <input type="text" id="lname" name="lname" placeholder="Dein Nachname" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" placeholder="deine@email.at" required />
+            </div>
+            <div class="form-group">
+              <label for="service">Interesse an</label>
+              <select id="service" name="service">
+                <option value="">– Bitte wählen –</option>
+                <option>Klangschalen-Massage</option>
+                <option>Chakren-Harmonisierung</option>
+                <option>Impuls-Coaching</option>
+                <option>Lebensberatung</option>
+                <option>Access Bars® / Facelift</option>
+                <option>Schamanische Sitzung</option>
+                <option>Ich bin offen für Empfehlungen</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Deine Nachricht</label>
+              <textarea id="message" name="message" rows="5" placeholder="Was bewegt dich? Was erhoffst du dir? Ich freue mich auf deine Nachricht…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">
+              <span>Nachricht senden</span>
+              <svg viewBox="0 0 24 24" fill="none"><path d="M2 12L22 2L12 22L10 13L2 12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer id="footer">
+    <div class="footer-wave">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 30 Q180 0 360 30 Q540 60 720 30 Q900 0 1080 30 Q1260 60 1440 30" stroke="url(#footerWave)" stroke-width="1.5" fill="none" opacity="0.4"/>
+        <defs>
+          <linearGradient id="footerWave" x1="0" y1="0" x2="1440" y2="0" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#c9a96e" stop-opacity="0"/>
+            <stop offset="30%" stop-color="#c9a96e"/>
+            <stop offset="70%" stop-color="#a07bc9"/>
+            <stop offset="100%" stop-color="#a07bc9" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+      </svg>
+    </div>
+    <div class="footer-inner container">
+      <div class="footer-brand">
+        <a href="#hero" class="nav-logo">
+          <span class="logo-icon">
+            <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="20" cy="20" r="18" stroke="url(#goldGrad2)" stroke-width="1.5"/>
+              <path d="M8 20 Q12 14 16 20 Q20 26 24 20 Q28 14 32 20" stroke="url(#goldGrad2)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <defs>
+                <linearGradient id="goldGrad2" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#c9a96e"/>
+                  <stop offset="100%" stop-color="#f0d794"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="logo-text">Klang deiner Seele</span>
+        </a>
+        <p>Heilung durch Klang, Energie & Intuition.<br>Barbara Hofer – Arnreit, Oberösterreich.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#about">Über mich</a></li>
+          <li><a href="#services">Angebote</a></li>
+          <li><a href="#approach">Mein Ansatz</a></li>
+          <li><a href="#testimonials">Stimmen</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Angebote</h4>
+        <ul>
+          <li><a href="#services">Klangschalen-Massage</a></li>
+          <li><a href="#services">Chakren-Harmonisierung</a></li>
+          <li><a href="#services">Impuls-Coaching</a></li>
+          <li><a href="#services">Access Bars®</a></li>
+          <li><a href="#services">Schamanische Sitzungen</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Kontakt</h4>
+        <p>Katzenbach 6<br>A-4122 Arnreit (OÖ)</p>
+        <a href="tel:+4366473473342">+43 664 734 733 42</a>
+        <a href="mailto:barbara@klangdeinerseele.at">barbara@klangdeinerseele.at</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© 2025 Klang deiner Seele – Barbara Hofer. Alle Rechte vorbehalten.</span>
+        <span>Mit ♡ gestaltet</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
